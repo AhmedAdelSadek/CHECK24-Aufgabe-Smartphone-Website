@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Pixel 4",
+    "price": 950,
+    "price_reduced": null,
+    "rating": 4.6,
+    "topseller": true,
+    "new": true,
+    "brand": "Google",
+    "image": "google-pixel-4-black_front_zoom.png",
+    "sales_figures": 23513
+  }
+]

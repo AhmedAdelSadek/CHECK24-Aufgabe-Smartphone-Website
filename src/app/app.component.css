@@ -1,0 +1,17 @@
+.header {
+  top: 0%;
+  height: 4em;
+  position: fixed;
+  min-width: 100%;
+  z-index: 4;
+}
+.wrapper {
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+.footer {
+  bottom: 0;
+  height: 4em;
+  position: fixed;
+  min-width: 100%;
+}

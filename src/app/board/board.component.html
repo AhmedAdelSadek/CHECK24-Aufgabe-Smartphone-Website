@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="content" fxLayout="column" fxLayoutAlign="center center">
+        <teaser class="content-header" fxLayout="row wrap" fxLayoutAlign="center"></teaser>
+        <div class="conent-brands" fxLayout="row" fxLayoutAlign="center center">
+            <img *ngFor="let pic of productService.getBrands() | async" style="width: 3%;margin: 1%;" src="{{pic}}">
+        </div>
+        <div class="conent-tap" fxLayout="column" style="width:100% ;">
+            <vergleich></vergleich>
+        </div>
+    </div>
+</div>

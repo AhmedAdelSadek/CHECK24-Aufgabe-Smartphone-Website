@@ -1,0 +1,27 @@
+<div fxLayout="row">
+  <div *ngIf="productService.merkzettelArray.length == 0" fxLayout="column" class="errorClass">
+    <div>Sie sind aktuell nicht eingeloggt und haben in dieser Session</div>
+    <div>keine Geräte auf Ihrem Merkzettel</div>
+    <div><span style="color: #FFA500;">Loggen Sie sich ein</span>, um Ihren gespeicherten Merkzettel</div>
+    <div>abzurufen.</div>
+    <div>Oder schauen Sie sich doch nochmal auf unserer Startseite um.</div>
+  </div>
+  <div *ngIf="productService.merkzettelArray.length > 0" fxLayout="row wrap" style="overflow: auto;">
+    <div *ngFor="let phone of productService.merkzettelArray; let i=index;" fxLayout="column"
+      style="border: 2px solid #7b8080; margin: 2%; padding: 2%;" class="width">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img style="width: 16%;margin: 1%;" src="../assets/images/phones/{{phone.image}}">
+      </div>
+      <div fxLayout="column" fxLayoutAlign=" flex-start">
+        <div class="Stars" style="--rating: {{phone.rating}};"></div>
+        <div>{{phone.name}}</div>
+        <div [className]="phone?.price_reduced ? 'line-through' : 'none-line-through'">{{phone?.price
+          |currency:'EUR':true}}</div>
+        <div>{{phone?.price_reduced |currency:'EUR':true}}</div>
+        <button class="bestell-btn">Bestellen</button>
+        <i style='font-size:24px' [className]="phone.star ? 'fas' : 'far'"
+          (click)="clickFav(i, phone.star)">&#xf004;</i>
+      </div>
+    </div>
+  </div>
+</div>

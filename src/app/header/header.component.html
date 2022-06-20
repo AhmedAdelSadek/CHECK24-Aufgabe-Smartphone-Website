@@ -1,0 +1,61 @@
+<div class="header" fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <div class="logo iteam" (click)="backToMainPage()">
+    <img class="img-logo" src="../assets/images/logo.png">
+    <Span>Mobilo24</Span>
+  </div>
+  <div class="select" fxLayoutAlign="space-between center">
+    <div class="dropdown">
+      <button class="dropbtn" (click)="openNav()">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>
+    </div>
+    <select class="iteam" name="TOPSELLER">
+      <option value="TOPSELLER">TOPSELLER</option>
+    </select>
+    <select class="iteam" name="ANGEBOTE">
+      <option value="ANGEBOTE">ANGEBOTE</option>
+    </select>
+    <div class="iteam">
+      <input style="border:none" type="search" placeholder="SUCHE">
+    </div>
+  </div>
+  <div class="fav">
+    <button style="border: none;" (click)="openFavComp()">Merkzettel
+      ({{productService.merkzettelArray.length}})</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <div class="overlay-content">
+
+    <div fxLayout="row" fxLayoutAlign="space-around flex-start" id="Sadek">
+
+      <div *ngFor="let item of productService.selectedData;" id="Adel">
+
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <h2>
+            {{item.name}}
+          </h2>
+          <img style="width: 50%;margin: 1%;" src="../assets/images/phones/{{item.value[0].image}}">
+          <ul *ngFor="let x of item.value;" id="Ahmed">
+            <li>{{x.name}}</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

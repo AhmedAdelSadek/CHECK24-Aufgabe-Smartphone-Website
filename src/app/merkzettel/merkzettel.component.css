@@ -1,0 +1,27 @@
+.line-through {
+  text-decoration: line-through;
+}
+
+.none-line-through {
+  text-decoration: none;
+}
+
+.width {
+  max-width: 50%;
+}
+
+.bestell-btn {
+  min-width: 100%;
+  background-color: #111111;
+  color: white;
+}
+
+.errorClass{
+  overflow: auto;
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border: 2px solid;
+    padding: 10% 2%;
+}

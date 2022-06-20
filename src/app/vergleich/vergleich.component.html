@@ -1,0 +1,59 @@
+<dialog id="favDialog">
+    <form method="dialog">
+        <div fxLayoutAlign="space-between">
+            <h2>Login:</h2>
+            <span class="close">&times;</span>
+        </div>
+        <hr style="margin-top: 0px">
+        <div>
+            <p>Bitte hier einloggen um Artikel einer Bestellung hinzufügen zu können</p>
+        </div>
+        <div fxLayoutAlign="flex-end">
+            <button id="confirmBtn" fxLayoutAlign="center center" (click)="close()">ok</button>
+        </div>
+    </form>
+</dialog>
+<div class="tab">
+    <button class="tablinks" (click)="openTap($event, 'Topseller')">Topseller</button>
+    <button class="tablinks" (click)="openTap($event, 'Neuheiten')">Neuheiten</button>
+    <button id="defaultOpen" class="tablinks" (click)="openTap($event, 'Angebote')">Angebote</button>
+    <button class="tablinks" (click)="openTap($event, 'Beliebtheit')">Beliebtheit</button>
+</div>
+<div id="Topseller" class="tabcontent">
+    <h3>Topseller</h3>
+</div>
+<div id="Neuheiten" class="tabcontent">
+    <h3>Neuheiten</h3>
+</div>
+<!--fxLayout="row" fxLayoutAlign="space-around center"-->
+<div id="Angebote" class="tabcontent">
+    <div fxLayout="row" style="overflow: auto;">
+        <div *ngFor="let phone of productService.dataPhones; let i=index;" fxLayout="column"
+            fxLayoutAlign="center center">
+            <img style="width: 52%;margin: 1%;" src="../assets/images/phones/{{phone.image}}">
+            <div class="Stars" style="--rating: {{phone.rating}};"></div>
+            <div>{{phone.name}}</div>
+            <div [className]="phone?.price_reduced ? 'line-through' : 'none-line-through'">{{phone?.price
+                |currency:'EUR':true}}</div>
+            <div>{{phone?.price_reduced |currency:'EUR':true}}</div>
+            <button class="bestellen-btn" id="bestelltBtn" (click)="openDialog()">Bestellen</button>
+            <i style='font-size:24px' [className]="phone.star ? 'fas' : 'far'"
+                (click)="clickMyFav(i, phone.star)">&#xf004;</i>
+        </div>
+    </div>
+</div>
+<div id="Beliebtheit" class="tabcontent">
+    <div fxLayout="row" style="overflow: auto;">
+        <div *ngFor="let phone of productService.getPopularity(); let i=index;" fxLayout="column"
+            fxLayoutAlign="center center">
+            <img style="width: 52%;margin: 1%;" src="../assets/images/phones/{{phone.image}}">
+            <div class="Stars" style="--rating: {{phone.rating}};"></div>
+            <div>{{phone.name}}</div>
+            <div [className]="phone?.price_reduced ? 'line-through' : 'none-line-through'">{{phone?.price
+                |currency:'EUR':true}}</div>
+            <div>{{phone?.price_reduced |currency:'EUR':true}}</div>
+            <button class="bestellen-btn" (click)="openDialog()">Bestellen</button>
+            <i style='font-size:24px' [className]="phone.star ? 'fas' : 'far'">&#xf004;</i>
+        </div>
+    </div>
+</div>

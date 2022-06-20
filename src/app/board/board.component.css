@@ -1,0 +1,17 @@
+.content {
+  /* height: 100vh; */
+}
+
+.content-header {
+  background: #f0f0f085;
+  max-width: 80%;
+}
+
+.conent-brands {
+  /* height: 10%; */
+}
+
+.conent-tap {
+  height: 30%;
+  width: 90%;
+}

@@ -1,0 +1,35 @@
+#content-text {
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.shop-btn {
+    background: #FFA500;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: none;
+    min-width: 30%;
+    margin-top: 1%;
+}
+
+.phone-left {
+    max-width: 17%;
+    position: relative;
+    left: 7%;
+}
+
+.phone-center {
+    max-width: 22%;
+    position: relative;
+    z-index: 2;
+}
+
+.phone-right {
+    max-width: 33%;
+    position: relative;
+    right: 6%;
+    z-index: 1;
+}
